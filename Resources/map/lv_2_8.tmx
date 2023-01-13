@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="64" tileheight="64">
+ <properties>
+  <property name="maxStep" value="23"/>
+ </properties>
+ <tileset firstgid="1" name="lv2map" tilewidth="64" tileheight="64">
+  <image source="lv2map.png" width="256" height="256"/>
+  <tile id="0">
+   <properties>
+    <property name="isOver" value="false"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="bg1" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBYwEQAMzIwHADRLFA+CwQzQNkMUAxXj6SOARkjy6GzkcQYsIhhs4+gvejqibELm71EqMMrDw1DYtQkAACwGzEF
+  </data>
+ </layer>
+ <layer name="fg1" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJyFjgEKQCEIQwdBEF7So3UUj/aTrFT4JQwHezgBoDyEufvazTwBDDeaeQ5p6GSsebUbw4tqeDFudbO/4/ta7N0cRb4bG3rLzHKXF+f/X9xPvjnrl5uU+QCBxBgC
+  </data>
+ </layer>
+ <layer name="fg2" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAOOBgYDuCQIgh4KdCLDtixm7+AWuYTsgsZcJBoHkw90NwEJDsW4NMDAOVGA28=
+  </data>
+ </layer>
+ <objectgroup name="obj1">
+  <object name="wall" x="0" y="0" width="640" height="64"/>
+  <object name="wall" x="0" y="0" width="64" height="640"/>
+  <object name="wall" x="128" y="192" width="256" height="64"/>
+  <object name="wall" x="320" y="0" width="64" height="128"/>
+  <object name="wall" x="448" y="192" width="192" height="64"/>
+  <object name="wall" x="128" y="0" width="64" height="256"/>
+  <object name="wall" x="192" y="192" width="64" height="128"/>
+  <object name="wall" x="576" y="0" width="64" height="640"/>
+  <object name="wall" x="0" y="576" width="640" height="64"/>
+  <object name="wall" x="0" y="384" width="192" height="64"/>
+  <object name="wall" x="128" y="320" width="64" height="128"/>
+  <object name="wall" x="256" y="384" width="384" height="128"/>
+  <object name="player" x="64" y="512" width="64" height="64"/>
+  <object name="enemy" x="192" y="448" width="64" height="64"/>
+  <object name="door" x="128" y="256" width="64" height="64"/>
+  <object name="banziL" x="371" y="256" width="13" height="64"/>
+  <object name="key" x="64" y="320" width="64" height="64">
+   <properties>
+    <property name="active" value="false"/>
+   </properties>
+  </object>
+  <object name="wall" x="448" y="128" width="64" height="128"/>
+  <object name="wall" x="320" y="320" width="64" height="320"/>
+  <object name="wall" x="128" y="512" width="512" height="64"/>
+  <object name="enemy" x="512" y="320" width="64" height="64"/>
+  <object name="enemy" x="320" y="128" width="64" height="64"/>
+  <object name="box" x="512" y="128" width="64" height="64"/>
+  <object name="banzi" x="64" y="179" width="64" height="13">
+   <properties>
+    <property name="isOver" value="false"/>
+   </properties>
+  </object>
+  <object name="fazhen_A" x="64" y="64" width="64" height="64">
+   <properties>
+    <property name="target" value="fazhen_B"/>
+   </properties>
+  </object>
+  <object name="fazhen_B" x="512" y="256" width="64" height="64">
+   <properties>
+    <property name="target" value="fazhen_A"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

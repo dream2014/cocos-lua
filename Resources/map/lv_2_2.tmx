@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="64" tileheight="64">
+ <properties>
+  <property name="maxStep" value="10"/>
+ </properties>
+ <tileset firstgid="1" name="lv2map" tilewidth="64" tileheight="64">
+  <image source="lv2map.png" width="256" height="256"/>
+ </tileset>
+ <layer name="bg1" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBYwEQAMzIwHMAnz8LAwIBLDEQjY3zqiDEPmY9LHbrdTHjUEXIfLr8QCjMsYUhQD1BNAgBdXC3Z
+  </data>
+ </layer>
+ <layer name="fg1" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJyFjgEKwDAIAwOlhc1P+jSf0qfNTWVS7CaEQLzGAkD7EcyFip1ms6vUpSXFG6QZlrHr4c7Ekfeh4GLf7NaMzpUbnivD3Tna9FWzcvTelmPDxb8qkTnjgwndzAWaCyLk
+  </data>
+ </layer>
+ <layer name="fg2" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAOOBgYDuCQoitgR+MD3bWAmubzMjAkUNM8bIAdyQ52Au4HAByiAvM=
+  </data>
+ </layer>
+ <objectgroup name="obj1">
+  <object name="wall" x="0" y="0" width="640" height="64"/>
+  <object name="wall" x="0" y="0" width="128" height="640"/>
+  <object name="wall" x="0" y="0" width="448" height="128"/>
+  <object name="wall" x="192" y="0" width="64" height="320"/>
+  <object name="wall" x="192" y="256" width="192" height="64"/>
+  <object name="wall" x="320" y="192" width="128" height="64"/>
+  <object name="wall" x="256" y="256" width="64" height="128"/>
+  <object name="wall" x="512" y="0" width="128" height="640"/>
+  <object name="wall" x="0" y="512" width="640" height="128"/>
+  <object name="wall" x="128" y="448" width="64" height="192"/>
+  <object name="wall" x="256" y="448" width="64" height="192"/>
+  <object name="wall" x="448" y="320" width="192" height="64"/>
+  <object name="player" x="256" y="192" width="64" height="64"/>
+  <object name="enemy" x="448" y="448" width="64" height="64"/>
+  <object name="door" x="128" y="128" width="64" height="64"/>
+  <object name="ding" x="448" y="64" width="64" height="13"/>
+  <object name="ding" x="320" y="320" width="64" height="13"/>
+  <object name="banziL" x="256" y="384" width="13" height="64">
+   <properties>
+    <property name="isOver" value="false"/>
+   </properties>
+  </object>
+  <object name="key" x="128" y="384" width="64" height="64">
+   <properties>
+    <property name="active" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
