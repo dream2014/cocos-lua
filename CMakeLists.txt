@@ -98,10 +98,27 @@ endif()
 
 # add cross-platforms source files and header files
 list(APPEND GAME_SOURCE
-     ${RUNTIME_SRC_ROOT}/Classes/AppDelegate.cpp
+		${RUNTIME_SRC_ROOT}/Classes/AppDelegate.cpp
+		${RUNTIME_SRC_ROOT}/Classes/GameNews.cpp
+		${RUNTIME_SRC_ROOT}/Classes/GameOverScene.cpp
+		${RUNTIME_SRC_ROOT}/Classes/GameScene.cpp
+		${RUNTIME_SRC_ROOT}/Classes/HelloWorldScene.cpp
+		${RUNTIME_SRC_ROOT}/Classes/LevelScene.cpp
+		${RUNTIME_SRC_ROOT}/Classes/SelectSence.cpp
+		${RUNTIME_SRC_ROOT}/Classes/ShopScene.cpp
+		${RUNTIME_SRC_ROOT}/Classes/Sound.cpp
      )
 list(APPEND GAME_HEADER
-     ${RUNTIME_SRC_ROOT}/Classes/AppDelegate.h
+		${RUNTIME_SRC_ROOT}/Classes/AppDelegate.h
+		${RUNTIME_SRC_ROOT}/Classes/Define.h
+		${RUNTIME_SRC_ROOT}/Classes/GameNews.h
+		${RUNTIME_SRC_ROOT}/Classes/GameOverScene.h
+		${RUNTIME_SRC_ROOT}/Classes/GameScene.h
+		${RUNTIME_SRC_ROOT}/Classes/HelloWorldScene.h
+		${RUNTIME_SRC_ROOT}/Classes/LevelScene.h
+		${RUNTIME_SRC_ROOT}/Classes/SelectSence.h
+		${RUNTIME_SRC_ROOT}/Classes/ShopScene.h
+		${RUNTIME_SRC_ROOT}/Classes/Sound.h
      )
 
 if(ANDROID)
