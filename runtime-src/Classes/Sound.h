@@ -1,7 +1,7 @@
 #ifndef __SOUND_H__
 #define __SOUND_H__
 #include "cocos2d.h"
-#include "SimpleAudioEngine.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 #include "Define.h"
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -11,22 +11,22 @@ public:
 	static Sound* getInstance();
 	void init();
 	void UnInit();
-	void playMenuBackground();  //²Ëµ¥½çÃæ±³¾°
-	void playGameBackground();  //ÓÎÏ·½çÃæ±³¾°
-	void playAttack();  //¹¥»÷
-	void playBtn();    //°´Å¥
-	void playBtnLeft();  //×ó°´Å¥
-	void playBtnRight(); //ÓÒ°´Å¥
-	void playDead();    //ËÀÍö
-	void playDisapper();//ÏûÊ§
-	void playDoorOpen(); //¿ªÃÅ
-	void playDoorClose();//¹ØÃÅ
-	void playFallGround();//ÂäµØ
-	void playGetKey();  //µÃµ½Ô¿³×
-	void playInDoor(); //½øÃÅ
-	void playMinStep(); //Ã»ÓĞ²½Êı
-	void playGetBei();  //µÃµ½½±±­
-	void playNoGetBei(); //Ã»ÓĞµÃµ½½±±­
+	void playMenuBackground();  //èœå•ç•Œé¢èƒŒæ™¯
+	void playGameBackground();  //æ¸¸æˆç•Œé¢èƒŒæ™¯
+	void playAttack();  //æ”»å‡»
+	void playBtn();    //æŒ‰é’®
+	void playBtnLeft();  //å·¦æŒ‰é’®
+	void playBtnRight(); //å³æŒ‰é’®
+	void playDead();    //æ­»äº¡
+	void playDisapper();//æ¶ˆå¤±
+	void playDoorOpen(); //å¼€é—¨
+	void playDoorClose();//å…³é—¨
+	void playFallGround();//è½åœ°
+	void playGetKey();  //å¾—åˆ°é’¥åŒ™
+	void playInDoor(); //è¿›é—¨
+	void playMinStep(); //æ²¡æœ‰æ­¥æ•°
+	void playGetBei();  //å¾—åˆ°å¥–æ¯
+	void playNoGetBei(); //æ²¡æœ‰å¾—åˆ°å¥–æ¯
 	bool isBackground();
 	void stopBackground();
 private:

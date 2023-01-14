@@ -7,7 +7,7 @@
 USING_NS_CC;
 using namespace ui;
 using namespace cocostudio;
-using namespace CocosDenshion;
+using namespace cocostudio;
 #include "GameNews.h"
 
 class Select:public Layer

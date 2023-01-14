@@ -2,6 +2,7 @@
 #include "HelloWorldScene.h"
 #include "GameScene.h"
 #include "Sound.h"
+#include "scripting/deprecated/CCDeprecated.h"
 cocos2d::Scene* GameOver::createScene(int level, int levelNum, int loseStep)
 {
 	auto scene = Scene::create();

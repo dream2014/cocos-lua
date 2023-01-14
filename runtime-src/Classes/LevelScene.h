@@ -9,7 +9,7 @@
 USING_NS_CC;
 using namespace ui;
 using namespace cocostudio;
-using namespace CocosDenshion;
+using namespace cocostudio;
 class Level:public Layer
 {
 public:

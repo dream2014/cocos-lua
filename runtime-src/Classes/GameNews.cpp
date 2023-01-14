@@ -1,5 +1,6 @@
 #include "GameNews.h"
 #include "Sound.h"
+#include "scripting/deprecated/CCDeprecated.h"
 News* News::createNews(ccTouchCallback _okCallback,int type,bool isCan)
 {
 	auto news = new News;

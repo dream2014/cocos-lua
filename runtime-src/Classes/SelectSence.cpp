@@ -61,9 +61,9 @@ bool Select::init()
 	}
 
 	lab_second = static_cast<TextAtlas*>(Helper::seekWidgetByName(_node, "lab_second"));
-	lab_second->setString(String::createWithFormat("%d", jBNum > 10 ? 10 : jBNum)->getCString());
+	lab_second->setString(StringUtils::format("%d", jBNum > 10 ? 10 : jBNum));
 	lab_third = static_cast<TextAtlas*>(Helper::seekWidgetByName(_node, "lab_third"));
-	lab_third->setString(String::createWithFormat("%d", jBNum > 20 ? 20 : jBNum)->getCString());
+	lab_third->setString(StringUtils::format("%d", jBNum > 20 ? 20 : jBNum));
 
 	img_dark_second = static_cast<ImageView*>(Helper::seekWidgetByName(_node, "img_dark_second"));
 	img_dark_second->setVisible(!readBoolXML(SecondLevel));
@@ -218,8 +218,8 @@ void Select::OkTouchEventCallback(Ref *pSender, Widget::TouchEventType type)
 				saveBoolXML("levelLock3_1", false);
 			}
 		}
-		lab_second->setString(String::createWithFormat("%d", jBNum > 10 ? 10 : jBNum)->getCString());
-		lab_third->setString(String::createWithFormat("%d", jBNum > 20 ? 20 : jBNum)->getCString());
+		lab_second->setString(StringUtils::format("%d", jBNum > 10 ? 10 : jBNum));
+		lab_third->setString(StringUtils::format("%d", jBNum > 20 ? 20 : jBNum));
 		img_third_lock->setVisible(!readBoolXML(ThirdLevel));
 		img_dark_third->setVisible(!readBoolXML(ThirdLevel));
 		img_dark_second->setVisible(!readBoolXML(SecondLevel));

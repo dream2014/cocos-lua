@@ -2,6 +2,7 @@
 #include "HelloWorldScene.h"
 #include "GameOverScene.h"
 #include "Sound.h"
+#include "scripting/deprecated/CCDeprecated.h"
 #define MapWidth 64
 #define MapHeight 32
 cocos2d::Scene* Game::createScene(int level, int levelNum)
@@ -74,9 +75,9 @@ bool Game::init(int level, int levelNum)
 	lab_levelname->setString(levelname->getCString());
 
 	auto lab_lv = static_cast<TextAtlas*>(Helper::seekWidgetByName(_node, "lab_lv"));
-	lab_lv->setString(String::createWithFormat("%d", m_levelNum)->getCString());
+	lab_lv->setString(StringUtils::format("%d", m_levelNum));
 	auto lab_sence = static_cast<TextAtlas*>(Helper::seekWidgetByName(_node, "lab_sence"));
-	lab_sence->setString(String::createWithFormat("%d", m_level)->getCString());
+	lab_sence->setString(StringUtils::format("%d", m_level));
 	
 	img_no_bei = static_cast<ImageView*>(Helper::seekWidgetByName(_node, "img_no_bei"));
 	img_no_bei->setVisible(false);
@@ -103,9 +104,9 @@ bool Game::init(int level, int levelNum)
 	}
 
 	this->scheduleUpdate();
-	this->schedule(schedule_selector(Game::dropUpdate), 0.12f);
-	this->schedule(schedule_selector(Game::openBZUpdate), 0.02f);
-	this->schedule(schedule_selector(Game::faZhenUpdate), 0.08f);
+	this->schedule(CC_SCHEDULE_SELECTOR(Game::dropUpdate), 0.12f);
+	this->schedule(CC_SCHEDULE_SELECTOR(Game::openBZUpdate), 0.02f);
+	this->schedule(CC_SCHEDULE_SELECTOR(Game::faZhenUpdate), 0.08f);
 	return true;
 }
 
@@ -158,7 +159,7 @@ void Game::loadMap()
 	auto dict = m_map->getProperties();
 	maxStep = dict["maxStep"].asInt();
 	loseStep = maxStep;
-	lab_setp->setString(String::createWithFormat("%d", maxStep)->getCString());
+	lab_setp->setString(StringUtils::format("%d", maxStep));
 	bar_step->setPercent(100.f);
 	auto objGroup = m_map->getObjectGroup("obj1");
 	auto arrGroup = objGroup->getObjects();
@@ -674,7 +675,7 @@ void Game::setBar()
 		Sound::getInstance()->playMinStep();
 		return;
 	}
-	lab_setp->setString(String::createWithFormat("%d", loseStep)->getCString());
+	lab_setp->setString(StringUtils::format("%d", loseStep));
 	bar_step->setPercent(loseStep*100.f/maxStep);
 }
 
@@ -1222,7 +1223,7 @@ void Game::OkTouchEventCallback(Ref *pSender, Widget::TouchEventType type)
 			{
 				img_no_bei->setVisible(false);
 			}
-			lab_setp->setString(String::createWithFormat("%d", loseStep)->getCString());
+			lab_setp->setString(StringUtils::format("%d", loseStep));
 			bar_step->setPercent(loseStep*100.f / maxStep);
 		}
 		_news->runAction(Spawn::create(
@@ -1266,7 +1267,7 @@ void Game::AddStepTouchEventCallback(Ref *pSender, Widget::TouchEventType type)
 				{
 					img_no_bei->setVisible(false);
 				}
-				lab_setp->setString(String::createWithFormat("%d", loseStep)->getCString());
+				lab_setp->setString(StringUtils::format("%d", loseStep));
 				bar_step->setPercent(loseStep*100.f / maxStep);
 			}
 		}

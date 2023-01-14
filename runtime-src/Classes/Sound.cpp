@@ -1,5 +1,8 @@
-#include "Sound.h"
+﻿#include "Sound.h"
+//#include "audio/include/AudioEngine.h"
+//#include "editor-support/cocostudio/SimpleAudioEngine.h"
 
+using namespace CocosDenshion;
 Sound* Sound::_instance = nullptr;
 
 Sound* Sound::getInstance()
@@ -170,6 +173,7 @@ void Sound::playNoGetBei()
 bool Sound::isBackground()
 {
 	return SimpleAudioEngine::getInstance()->isBackgroundMusicPlaying();
+	return true;
 }
 
 void Sound::stopBackground()
