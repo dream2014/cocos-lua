@@ -46,6 +46,7 @@ include(base/CMakeLists.txt)
 include(ui/CMakeLists.txt)
 include(network/CMakeLists.txt)
 include(audio/CMakeLists.txt)
+include(scripting/deprecated/CMakeLists.txt)
 
 # default value for cocos2dx extensions modules build
 option(BUILD_EDITOR_COCOSTUDIO "Build editor support for cocostudio" ON)
@@ -85,6 +86,7 @@ set(COCOS_HEADER cocos2d.h
     ${COCOS_NETWORK_HEADER}
     ${COCOS_EDITOR_SUPPORT_HEADER}
     ${COCOS_EXTENSIONS_HEADER}
+    ${COCOS_DEPRECATED_HEADER}
     )
 
 set(COCOS_SRC cocos2d.cpp
@@ -103,6 +105,7 @@ set(COCOS_SRC cocos2d.cpp
     ${COCOS_EDITOR_SUPPORT_SRC}
     ${COCOS_EXTENSIONS_SRC}
     ${COCOS_STORAGE_SRC}
+    ${COCOS_DEPRECATED_SRC}
     )
 
 list(APPEND COCOS_SRC ${COCOS_HEADER})

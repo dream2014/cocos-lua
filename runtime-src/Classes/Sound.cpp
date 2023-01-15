@@ -16,22 +16,22 @@ Sound* Sound::getInstance()
 
 void Sound::init()
 {
-	preloadBackgroundMusic("sound/sd_bg_play.mp3");
-	preloadBackgroundMusic("sound/sd_menu_bg.mp3");
-	preloadEffect("sound/sd_effect_attack.ogg");
-	preloadEffect("sound/sd_effect_btn.ogg");
-	preloadEffect("sound/sd_effect_btnleft.ogg");
-	preloadEffect("sound/sd_effect_btnright.ogg");
-	preloadEffect("sound/sd_effect_dead.ogg");
-	preloadEffect("sound/sd_effect_disapper.ogg");
-	preloadEffect("sound/sd_effect_doorclose.ogg");
-	preloadEffect("sound/sd_effect_dooropen.ogg");
-	preloadEffect("sound/sd_effect_fallground.ogg");
-	preloadEffect("sound/sd_effect_getbei.ogg");
-	preloadEffect("sound/sd_effect_getKey.ogg");
-	preloadEffect("sound/sd_effect_indoor.ogg");
-	preloadEffect("sound/sd_effect_minstep.ogg");
-	preloadEffect("sound/sd_effect_nogetbei.ogg");
+	_preloadBackgroundMusic("sound/sd_bg_play.mp3");
+	_preloadBackgroundMusic("sound/sd_menu_bg.mp3");
+	_preloadEffect("sound/sd_effect_attack.ogg");
+	_preloadEffect("sound/sd_effect_btn.ogg");
+	_preloadEffect("sound/sd_effect_btnleft.ogg");
+	_preloadEffect("sound/sd_effect_btnright.ogg");
+	_preloadEffect("sound/sd_effect_dead.ogg");
+	_preloadEffect("sound/sd_effect_disapper.ogg");
+	_preloadEffect("sound/sd_effect_doorclose.ogg");
+	_preloadEffect("sound/sd_effect_dooropen.ogg");
+	_preloadEffect("sound/sd_effect_fallground.ogg");
+	_preloadEffect("sound/sd_effect_getbei.ogg");
+	_preloadEffect("sound/sd_effect_getKey.ogg");
+	_preloadEffect("sound/sd_effect_indoor.ogg");
+	_preloadEffect("sound/sd_effect_minstep.ogg");
+	_preloadEffect("sound/sd_effect_nogetbei.ogg");
 }
 
 void Sound::playMenuBackground()
@@ -42,7 +42,7 @@ void Sound::playMenuBackground()
 		{
 			stopBackground();
 		}
-		playBackgroundMusic("sound/sd_menu_bg.mp3",true);
+		_playBackgroundMusic("sound/sd_menu_bg.mp3",true);
 	}
 }
 
@@ -54,7 +54,7 @@ void Sound::playGameBackground()
 		{
 			stopBackground();
 		}
-		playBackgroundMusic("sound/sd_bg_play.mp3", true);
+		_playBackgroundMusic("sound/sd_bg_play.mp3", true);
 	}
 }
 
@@ -62,7 +62,7 @@ void Sound::playAttack()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_attack.ogg");
+		_playEffect("sound/sd_effect_attack.ogg");
 	}
 }
 
@@ -70,7 +70,7 @@ void Sound::playBtn()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_btn.ogg");
+		_playEffect("sound/sd_effect_btn.ogg");
 	}
 }
 
@@ -78,7 +78,7 @@ void Sound::playBtnLeft()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_btnleft.ogg");
+		_playEffect("sound/sd_effect_btnleft.ogg");
 	}
 }
 
@@ -86,7 +86,7 @@ void Sound::playBtnRight()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_btnright.ogg");
+		_playEffect("sound/sd_effect_btnright.ogg");
 	}
 }
 
@@ -94,7 +94,7 @@ void Sound::playDead()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_dead.ogg");
+		_playEffect("sound/sd_effect_dead.ogg");
 	}
 }
 
@@ -102,7 +102,7 @@ void Sound::playDisapper()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_disapper.ogg");
+		_playEffect("sound/sd_effect_disapper.ogg");
 	}
 }
 
@@ -110,7 +110,7 @@ void Sound::playDoorOpen()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_dooropen.ogg");
+		_playEffect("sound/sd_effect_dooropen.ogg");
 	}
 }
 
@@ -118,7 +118,7 @@ void Sound::playDoorClose()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_doorclose.ogg");
+		_playEffect("sound/sd_effect_doorclose.ogg");
 	}
 }
 
@@ -126,7 +126,7 @@ void Sound::playFallGround()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_fallground.ogg");
+		_playEffect("sound/sd_effect_fallground.ogg");
 	}
 }
 
@@ -134,7 +134,7 @@ void Sound::playGetKey()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_getKey.ogg");
+		_playEffect("sound/sd_effect_getKey.ogg");
 	}
 }
 
@@ -142,7 +142,7 @@ void Sound::playInDoor()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_indoor.ogg");
+		_playEffect("sound/sd_effect_indoor.ogg");
 	}
 }
 
@@ -150,7 +150,7 @@ void Sound::playMinStep()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_minstep.ogg");
+		_playEffect("sound/sd_effect_minstep.ogg");
 	}
 }
 
@@ -158,7 +158,7 @@ void Sound::playGetBei()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_getbei.ogg");
+		_playEffect("sound/sd_effect_getbei.ogg");
 	}
 }
 
@@ -166,14 +166,13 @@ void Sound::playNoGetBei()
 {
 	if (readBoolXML(MUSIC))
 	{
-		playEffect("sound/sd_effect_nogetbei.ogg");
+		_playEffect("sound/sd_effect_nogetbei.ogg");
 	}
 }
 
 bool Sound::isBackground()
 {
 	return SimpleAudioEngine::getInstance()->isBackgroundMusicPlaying();
-	return true;
 }
 
 void Sound::stopBackground()
@@ -186,22 +185,22 @@ void Sound::stopBackground()
 
 void Sound::UnInit()
 {
-	unloadEffect("sound/sd_bg_play.mp3");
-	unloadEffect("sound/sd_menu_bg.mp3");
-	unloadEffect("sound/sd_effect_attack.ogg");
-	unloadEffect("sound/sd_effect_btn.ogg");
-	unloadEffect("sound/sd_effect_btnleft.ogg");
-	unloadEffect("sound/sd_effect_btnright.ogg");
-	unloadEffect("sound/sd_effect_dead.ogg");
-	unloadEffect("sound/sd_effect_disapper.ogg");
-	unloadEffect("sound/sd_effect_doorclose.ogg");
-	unloadEffect("sound/sd_effect_dooropen.ogg");
-	unloadEffect("sound/sd_effect_fallground.ogg");
-	unloadEffect("sound/sd_effect_getbei.ogg");
-	unloadEffect("sound/sd_effect_getKey.ogg");
-	unloadEffect("sound/sd_effect_indoor.ogg");
-	unloadEffect("sound/sd_effect_minstep.ogg");
-	unloadEffect("sound/sd_effect_nogetbei.ogg");
+	_unloadEffect("sound/sd_bg_play.mp3");
+	_unloadEffect("sound/sd_menu_bg.mp3");
+	_unloadEffect("sound/sd_effect_attack.ogg");
+	_unloadEffect("sound/sd_effect_btn.ogg");
+	_unloadEffect("sound/sd_effect_btnleft.ogg");
+	_unloadEffect("sound/sd_effect_btnright.ogg");
+	_unloadEffect("sound/sd_effect_dead.ogg");
+	_unloadEffect("sound/sd_effect_disapper.ogg");
+	_unloadEffect("sound/sd_effect_doorclose.ogg");
+	_unloadEffect("sound/sd_effect_dooropen.ogg");
+	_unloadEffect("sound/sd_effect_fallground.ogg");
+	_unloadEffect("sound/sd_effect_getbei.ogg");
+	_unloadEffect("sound/sd_effect_getKey.ogg");
+	_unloadEffect("sound/sd_effect_indoor.ogg");
+	_unloadEffect("sound/sd_effect_minstep.ogg");
+	_unloadEffect("sound/sd_effect_nogetbei.ogg");
 }
 
 

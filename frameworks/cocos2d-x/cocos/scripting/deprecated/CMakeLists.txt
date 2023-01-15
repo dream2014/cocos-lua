@@ -1,23 +1,23 @@
 set(COCOS_DEPRECATED_HEADER
-    ../deprecated/CCDictionary.h
-    ../deprecated/CCDouble.h
-    ../deprecated/CCBool.h
-    ../deprecated/CCDeprecated.h
-    ../deprecated/CCNotificationCenter.h
-    ../deprecated/CCString.h
-    ../deprecated/CCFloat.h
-    ../deprecated/CCSet.h
-    ../deprecated/CCInteger.h
-    ../deprecated/CCArray.h
-    ../deprecated/CCDataVisitor.h
+    scripting/deprecated/CCDictionary.h
+    scripting/deprecated/CCDouble.h
+    scripting/deprecated/CCBool.h
+    scripting/deprecated/CCDeprecated.h
+    scripting/deprecated/CCNotificationCenter.h
+    scripting/deprecated/CCString.h
+    scripting/deprecated/CCFloat.h
+    scripting/deprecated/CCSet.h
+    scripting/deprecated/CCInteger.h
+    scripting/deprecated/CCArray.h
+    scripting/deprecated/CCDataVisitor.h
     )
 
 set(COCOS_DEPRECATED_SRC
-    ../deprecated/CCDictionary.cpp
-    ../deprecated/CCDeprecated.cpp
-    ../deprecated/CCNotificationCenter.cpp
-    ../deprecated/CCString.cpp
-    ../deprecated/CCSet.cpp
-    ../deprecated/CCArray.cpp
-    ../deprecated/CCDataVisitor.cpp
+    scripting/deprecated/CCDictionary.cpp
+    scripting/deprecated/CCDeprecated.cpp
+    scripting/deprecated/CCNotificationCenter.cpp
+    scripting/deprecated/CCString.cpp
+    scripting/deprecated/CCSet.cpp
+    scripting/deprecated/CCArray.cpp
+    scripting/deprecated/CCDataVisitor.cpp
     )

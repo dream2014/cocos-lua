@@ -22,11 +22,11 @@
 #define StaticZorder 10
 
 #define MUSIC "sound"
-// #define preloadEffect SimpleAudioEngine::getInstance()->preloadEffect
-// #define playEffect SimpleAudioEngine::getInstance()->playEffect
-// #define preloadBackgroundMusic SimpleAudioEngine::getInstance()->preloadBackgroundMusic
-// #define playBackgroundMusic SimpleAudioEngine::getInstance()->playBackgroundMusic
-// #define unloadEffect SimpleAudioEngine::getInstance()->unloadEffect
+#define _preloadEffect SimpleAudioEngine::getInstance()->preloadEffect
+#define _playEffect SimpleAudioEngine::getInstance()->playEffect
+#define _preloadBackgroundMusic SimpleAudioEngine::getInstance()->preloadBackgroundMusic
+#define _playBackgroundMusic SimpleAudioEngine::getInstance()->playBackgroundMusic
+#define _unloadEffect SimpleAudioEngine::getInstance()->unloadEffect
 
 // #include "audio/include/AudioEngine.h"
 // #define preloadEffect AudioEngine::preload
@@ -35,8 +35,8 @@
 // #define playBackgroundMusic AudioEngine::play2d
 // #define unloadEffect AudioEngine::uncache
 
-#define preloadEffect //
-#define playEffect //
-#define preloadBackgroundMusic //
-#define playBackgroundMusic //
-#define unloadEffect //
+// #define _preloadEffect //
+// #define _playEffect //
+// #define _preloadBackgroundMusic //
+// #define _playBackgroundMusic //
+// #define _unloadEffect //

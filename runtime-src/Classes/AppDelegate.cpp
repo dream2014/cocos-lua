@@ -30,6 +30,14 @@
 
 #include "lua-bindings/lua_cocos2d_3d.h"
 
+//-----------------------------------------
+#include "HelloWorldScene.h"
+#include "Define.h"
+#include "Sound.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
+using namespace CocosDenshion;
+//-----------------------------------------
+
 extern "C" {
 #include "luaopenssl/openssl.h"
 }
@@ -217,12 +225,13 @@ bool AppDelegate::applicationDidFinishLaunching()
     initGLView(APP_NAME);
     runtime::luaOpen(_open_plugins);
     
-    return RuntimeContext::applicationDidFinishLaunching();
+    // return RuntimeContext::applicationDidFinishLaunching();
+    return MapGameApplicationDidFinishLaunching();
 }
 
 bool AppDelegate::MapGameApplicationDidFinishLaunching() {
-    // // initialize director
-    // auto director = Director::getInstance();
+    // initialize director
+    auto director = Director::getInstance();
 	// auto glview = director->getOpenGLView();
 	// if (!glview) {
 	// 	glview = GLView::createWithRect("My Game", Rect(0, 0, 640, 960),0.5f);
@@ -230,42 +239,42 @@ bool AppDelegate::MapGameApplicationDidFinishLaunching() {
     // }
 
 	// glview->setDesignResolutionSize(640, 1136, ResolutionPolicy::EXACT_FIT);
-    // // turn on display FPS
-    // director->setDisplayStats(true);
+    // turn on display FPS
+    director->setDisplayStats(true);
 
-    // // set FPS. the default value is 1.0/60 if you don't call this
-    // director->setAnimationInterval(1.0 / 60);
+    // set FPS. the default value is 1.0/60 if you don't call this
+    director->setAnimationInterval(1.0 / 60);
 
-	// if (!readBoolXML(FirstGame))
-	// {
-	// 	saveBoolXML(FirstGame, true);
-	// 	for (int i = 1; i < 4;i++)
-	// 	{
-	// 		for (int j = 1; j < 19;j++)
-	// 		{
-	// 			char name[15] = { 0 };
-	// 			sprintf(name, LevelLock, i, j);
-	// 			saveBoolXML(name, true);
-	// 			sprintf(name, LevelBei, i, j);
-	// 			saveBoolXML(name, false);
-	// 		}			
-	// 	}
-	// 	saveBoolXML("levelLock1_1", false);
-	// 	saveBoolXML(SecondLevel, false);
-	// 	saveBoolXML(ThirdLevel, false);
-	// 	saveIntXML(JBeiNum, 0);
-	// 	saveBoolXML(GM, false);
-	// }
+	if (!readBoolXML(FirstGame))
+	{
+		saveBoolXML(FirstGame, true);
+		for (int i = 1; i < 4;i++)
+		{
+			for (int j = 1; j < 19;j++)
+			{
+				char name[15] = { 0 };
+				sprintf(name, LevelLock, i, j);
+				saveBoolXML(name, true);
+				sprintf(name, LevelBei, i, j);
+				saveBoolXML(name, false);
+			}			
+		}
+		saveBoolXML("levelLock1_1", false);
+		saveBoolXML(SecondLevel, false);
+		saveBoolXML(ThirdLevel, false);
+		saveIntXML(JBeiNum, 0);
+		saveBoolXML(GM, false);
+	}
 	
-	// saveBoolXML(MUSIC, true);
+	saveBoolXML(MUSIC, true);
 
-	// Sound::getInstance()->init();
+	Sound::getInstance()->init();
 	
-    // // create a scene. it's an autorelease object
-    // auto scene = HelloWorld::createScene();
+    // create a scene. it's an autorelease object
+    auto scene = HelloWorld::createScene();
 
-    // // run
-    // director->runWithScene(scene);
+    // run
+    director->runWithScene(scene);
 
     return true;
 }
