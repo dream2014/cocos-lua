@@ -230,6 +230,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 }
 
 bool AppDelegate::MapGameApplicationDidFinishLaunching() {
+	FileUtils::getInstance()->addSearchPath("res/Resources");
     // initialize director
     auto director = Director::getInstance();
 	// auto glview = director->getOpenGLView();
