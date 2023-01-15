@@ -225,12 +225,12 @@ bool AppDelegate::applicationDidFinishLaunching()
     initGLView(APP_NAME);
     runtime::luaOpen(_open_plugins);
     
-    // return RuntimeContext::applicationDidFinishLaunching();
+    //RuntimeContext::applicationDidFinishLaunching();
     return MapGameApplicationDidFinishLaunching();
 }
 
 bool AppDelegate::MapGameApplicationDidFinishLaunching() {
-	FileUtils::getInstance()->addSearchPath("res/Resources");
+	FileUtils::getInstance()->addSearchPath("res/MapGame");
     // initialize director
     auto director = Director::getInstance();
 	// auto glview = director->getOpenGLView();
