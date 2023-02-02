@@ -12,7 +12,7 @@
 #include "ui/CocosGUI.h"
 
 #if defined(CCLUA_OS_ANDROID) || defined(CCLUA_OS_IOS)
-#include "bugly/CrashReport.h"
+// #include "bugly/CrashReport.h"
 #endif
 
 #include "audio/include/AudioEngine.h"
@@ -680,16 +680,16 @@ void runtime::log(const char *fmt, ...)
     }
     
 #if defined(CCLUA_OS_ANDROID) || defined(CCLUA_OS_IOS)
-    if (_reportError) {
-        if (runtime::isCocosThread()) {
-            CrashReport::log(CrashReport::Verbose, buf);
-        } else {
-            std::string msg = buf;
-            runtime::runOnCocosThread([msg]() {
-                CrashReport::log(CrashReport::Verbose, msg.c_str());
-            });
-        }
-    }
+    // if (_reportError) {
+    //     if (runtime::isCocosThread()) {
+    //         CrashReport::log(CrashReport::Verbose, buf);
+    //     } else {
+    //         std::string msg = buf;
+    //         runtime::runOnCocosThread([msg]() {
+    //             CrashReport::log(CrashReport::Verbose, msg.c_str());
+    //         });
+    //     }
+    // }
 #endif
     
 #if defined(CCLUA_OS_ANDROID)

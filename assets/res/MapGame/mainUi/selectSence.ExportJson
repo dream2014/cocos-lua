@@ -1212,7 +1212,7 @@
                   "y": 0,
                   "charMapFile": null,
                   "charMapFileData": {
-                    "path": "Yellow Numbers.png",
+                    "path": "YellowNumbers.png",
                     "plistFile": "",
                     "resourceType": 0
                   },
@@ -1263,7 +1263,7 @@
                   "y": 0,
                   "charMapFile": null,
                   "charMapFileData": {
-                    "path": "White digital.png",
+                    "path": "Whitedigital.png",
                     "plistFile": "",
                     "resourceType": 0
                   },
@@ -1423,7 +1423,7 @@
                   "y": 0,
                   "charMapFile": null,
                   "charMapFileData": {
-                    "path": "Yellow Numbers.png",
+                    "path": "YellowNumbers.png",
                     "plistFile": "",
                     "resourceType": 0
                   },
@@ -1474,7 +1474,7 @@
                   "y": 0,
                   "charMapFile": null,
                   "charMapFileData": {
-                    "path": "White digital.png",
+                    "path": "Whitedigital.png",
                     "plistFile": "",
                     "resourceType": 0
                   },

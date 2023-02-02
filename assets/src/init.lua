@@ -15,7 +15,7 @@ end
 
 -- set window size on mac or win
 if runtime.os == 'mac' or runtime.os == 'win32' then
-    window.setFrameSize(900, 500)
+    window.setFrameSize(720, 1280)
 end
 
 -- print runtime info
@@ -26,8 +26,8 @@ runtime.frameRate = 60
 runtime.displayStats = DEBUG
 
 -- init design size
-local DESIGN_WIDTH = 1334
-local DESIGN_HEIGHT = 750
+local DESIGN_WIDTH = 720--1334
+local DESIGN_HEIGHT = 1280--750
 local RESOLUTION_POLICY = {
     EXACT_FIT = 0,
     NO_BORDER = 1,

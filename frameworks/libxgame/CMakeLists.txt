@@ -32,20 +32,6 @@ target_sources(xgame PRIVATE
     ${XXTEA_HEADER}
 )
 
-if(CCLUA_BUILD_BUGLY)
-    if(ANDROID OR IOS)
-        include(src/bugly/CMakeLists.txt)
-        target_sources(xgame PRIVATE ${BUGLY_HEADER} ${BUGLY_SRC})
-        target_compile_definitions(xgame PUBLIC CCLUA_BUILD_BUGLY)
-    else()
-        set(CCLUA_BUILD_BUGLY OFF)
-    endif()
-    if(IOS)
-        set(BUGLY_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/src/bugly/Bugly.framework")
-        target_link_libraries(xgame ${BUGLY_LIBRARY})
-    endif()
-endif()
-
 if(CCLUA_BUILD_LAME AND (IOS OR ANDROID))
     include(src/lame/CMakeLists.txt)
     target_sources(xgame PRIVATE ${LAME_SRC} ${LAME_HEADER})

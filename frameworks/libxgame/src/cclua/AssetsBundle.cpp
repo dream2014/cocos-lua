@@ -149,21 +149,42 @@ bool AssetsBundle::exist(const std::string &path) const
 
 cocos2d::FileUtils::Status AssetsBundle::getContents(const std::string& filename, cocos2d::ResizableBuffer* buffer) const
 {
-    auto it = _assets.find(to_assets_path(filename));
-    
-    if (it == _assets.end() || _data == NULL) {
-        return FileUtils::Status::NotExists;
-    }
-    
-    file_seek(_data, it->second.data, SEEK_SET);
-    file_read_kind(_data); // skip kind
-    uint32_t len = file_read_uint(_data);
-    buffer->resize(len);
-    if (file_read(_data, buffer->buffer(), len)) {
-        return FileUtils::Status::OK;
-    }
-    
-    return FileUtils::Status::ReadFailed;
+    auto path = to_assets_path(filename);
+	CCLOG("++++ AssetsBundle::path: %s", path.c_str());
+	static const std::string apkprefix("assets/");
+	if (filename.empty())
+		return FileUtils::Status::NotExists;
+
+	auto fs = FileUtils::getInstance();
+	std::string fullPath = fs->fullPathForFilename(filename);
+
+	std::string relativePath = std::string();
+	size_t position = fullPath.find(apkprefix);
+	if (0 == position) {
+		// "assets/" is at the beginning of the path and we don't want it
+		relativePath += fullPath.substr(apkprefix.size());
+	}
+	else {
+		relativePath = fullPath;
+	}
+
+	auto assetsPath = to_assets_path(relativePath);
+	auto it = _assets.find(to_assets_path(relativePath));
+
+	if (it == _assets.end() || _data == NULL) {
+		return FileUtils::Status::NotExists;
+	}
+
+	file_seek(_data, it->second.data, SEEK_SET);
+	file_read_kind(_data); // skip kind
+	uint32_t len = file_read_uint(_data);
+	buffer->resize(len);
+	if (file_read(_data, buffer->buffer(), len)) {
+	    CCLOG("++++ AssetsBundle::   ok");
+		return FileUtils::Status::OK;
+	}
+
+	return FileUtils::Status::ReadFailed;
 }
 
 NS_CCLUA_END

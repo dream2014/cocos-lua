@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.codetypes.hellolua"
+    package="com.yzzbs.battle"
     android:installLocation="auto">
 
     <uses-feature android:glEsVersion="0x00020000" />
@@ -34,7 +34,9 @@
         android:icon="@mipmap/icon"
         android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
         tools:replace="android:allowBackup"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true">
         
         <!-- Tell Cocos2dxActivity the name of our .so -->
         <meta-data android:name="android.app.lib_name" android:value="cclua" />
@@ -45,9 +47,10 @@
 
         <activity
             android:name="cclua.SplashActivity"
+            android:exported="true"
             android:alwaysRetainTaskState="true"
             android:launchMode="standard"
-            android:screenOrientation="sensorLandscape"
+            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,7 +64,7 @@
             android:keepScreenOn="true"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTask"
-            android:screenOrientation="sensorLandscape"
+            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,15 +74,16 @@
             </intent-filter>
         </activity>
 
-        <!-- wechat -->
-        <activity
-            android:name=".wxapi.WXPayEntryActivity"
-            android:exported="true"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".wxapi.WXEntryActivity"
-            android:exported="true"
-            android:launchMode="singleTop"/>
+        <!-- <activity
+            android:name="com.codetypes.hellolua.AppActivity"
+            android:exported="true" 
+            android:launchMode="singleTop">
+           <intent-filter>
+               &lt;!&ndash; <action android:name="android.intent.action.MAIN" /> &ndash;&gt;
+
+               &lt;!&ndash; <category android:name="android.intent.category.LAUNCHER" /> &ndash;&gt;
+           </intent-filter>
+        </activity> -->
     </application>
 
 </manifest>

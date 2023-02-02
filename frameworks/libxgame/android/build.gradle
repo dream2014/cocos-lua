@@ -36,7 +36,7 @@ dependencies {
     api 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //noinspection GradleDependency
-    api 'com.tencent.bugly:crashreport:latest.release'
+    // api 'com.tencent.bugly:crashreport:latest.release'
     //noinspection GradleDependency
-    api 'com.tencent.bugly:nativecrashreport:latest.release'
+    // api 'com.tencent.bugly:nativecrashreport:latest.release'
 }

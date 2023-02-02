@@ -30,6 +30,8 @@
 
 #include "lua-bindings/lua_cocos2d_3d.h"
 
+#include "cclua/filesystem.h"
+
 //-----------------------------------------
 #include "HelloWorldScene.h"
 #include "Define.h"
@@ -90,27 +92,27 @@ extern "C" {
 #include "lpeg/lptree.h"
 #endif //CCLUA_BUILD_LPEG
 
-#if defined(CCLUA_OS_IOS) || defined(CCLUA_OS_ANDROID)
-#include "bugly/CrashReport.h"
-#endif
+// #if defined(CCLUA_OS_IOS) || defined(CCLUA_OS_ANDROID)
+// // #include "bugly/CrashReport.h"
+// #endif
 
-#if defined(CCLUA_BUILD_JPUSH) || defined(CCLUA_BUILD_JANALYTICS) || defined(CCLUA_BUILD_JAUTH)
-#include "jiguang/lua_jiguang.h"
-#include "jiguang/JiGuang.h"
-#endif
+// #if defined(CCLUA_BUILD_JPUSH) || defined(CCLUA_BUILD_JANALYTICS) || defined(CCLUA_BUILD_JAUTH)
+// #include "jiguang/lua_jiguang.h"
+// #include "jiguang/JiGuang.h"
+// #endif
 
-#ifdef CCLUA_BUILD_TALKINGDATA
-#include "talkingdata/lua_talkingdata.h"
-#endif
+// #ifdef CCLUA_BUILD_TALKINGDATA
+// #include "talkingdata/lua_talkingdata.h"
+// #endif
 
-#ifdef CCLUA_BUILD_WECHAT
-#include "wechat/WeChat.h"
-#include "wechat/lua_wechat.h"
-#endif
+// #ifdef CCLUA_BUILD_WECHAT
+// #include "wechat/WeChat.h"
+// #include "wechat/lua_wechat.h"
+// #endif
 
-#if defined(CCLUA_BUILD_APPLE_AUTH) || defined(CCLUA_BUILD_APPLE_IAP)
-#include "apple/lua_apple.h"
-#endif
+// #if defined(CCLUA_BUILD_APPLE_AUTH) || defined(CCLUA_BUILD_APPLE_IAP)
+// #include "apple/lua_apple.h"
+// #endif
 
 #ifdef CCLUA_OS_WIN32
 #include "cclua/runtime-private.h"
@@ -214,8 +216,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 #endif
     
 #if defined(CCLUA_OS_IOS) || defined(CCLUA_OS_ANDROID)
-    CrashReport::setVersion(runtime::getVersion().c_str());
-    CrashReport::setChannel(runtime::getChannel().c_str());
+    // CrashReport::setVersion(runtime::getVersion().c_str());
+    // CrashReport::setChannel(runtime::getChannel().c_str());
 #else
     runtime::setEnv("cclua.debug", "true", true);
 #endif
@@ -225,7 +227,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     initGLView(APP_NAME);
     runtime::luaOpen(_open_plugins);
     
-    //RuntimeContext::applicationDidFinishLaunching();
+    RuntimeContext::applicationDidFinishLaunching();
     return MapGameApplicationDidFinishLaunching();
 }
 
@@ -233,15 +235,15 @@ bool AppDelegate::MapGameApplicationDidFinishLaunching() {
 	FileUtils::getInstance()->addSearchPath("res/MapGame");
     // initialize director
     auto director = Director::getInstance();
-	// auto glview = director->getOpenGLView();
+	auto glview = director->getOpenGLView();
 	// if (!glview) {
-	// 	glview = GLView::createWithRect("My Game", Rect(0, 0, 640, 960),0.5f);
+	// 	glview = GLView::createWithRect("My Game", Rect(0, 0, 720, 1280),0.5f);
     //     director->setOpenGLView(glview);
     // }
 
-	// glview->setDesignResolutionSize(640, 1136, ResolutionPolicy::EXACT_FIT);
+	glview->setDesignResolutionSize(720, 1280, ResolutionPolicy::EXACT_FIT);
     // turn on display FPS
-    director->setDisplayStats(true);
+    director->setDisplayStats(false);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);

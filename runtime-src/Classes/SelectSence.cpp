@@ -17,8 +17,10 @@ bool Select::init()
 		return false;
 	}
 	
+	CCLOG("---------------------------> start");
 	auto _node = GUIReader::getInstance()->widgetFromJsonFile("mainUi/selectSence.ExportJson");
 	this->addChild(_node);
+	CCLOG("---------------------------> end");
 
 	auto btn_frist_start = static_cast<Button*>(Helper::seekWidgetByName(_node,"btn_frist_start"));
 	btn_frist_start->addTouchEventListener(CC_CALLBACK_2(Select::FirstStartTouchEventCallback, this));

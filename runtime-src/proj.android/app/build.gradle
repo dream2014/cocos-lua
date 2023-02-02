@@ -6,11 +6,11 @@ android {
     compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
 
     defaultConfig {
-        applicationId "com.codetypes.hellolua"
+        applicationId "com.yzzbs.battle"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 100
-        versionName "1.1.0"
+        versionName "1.0.0"
 
         externalNativeBuild {
             cmake {
@@ -135,7 +135,7 @@ dependencies {
     implementation project(':libcocos2dx')
     implementation project(':libxgame')
 
-    implementation project(':plugin-wechat')
+//    implementation project(':plugin-wechat')
 
     // implementation project(':plugin-alipay')
     // implementation project(':plugin-talkingdata')
