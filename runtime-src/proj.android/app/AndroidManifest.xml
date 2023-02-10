@@ -12,8 +12,10 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <!-- <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/> -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!-- <uses-permission android:name="com.android.vending.BILLING" /> -->
 
     <!-- remove permissions -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" tools:node="remove"/>
@@ -25,12 +27,12 @@
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" tools:node="remove"/>
     <uses-permission android:name="android.permission.GET_TASKS" tools:node="remove" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" tools:node="remove"
-        tools:ignore="ProtectedPermissions" />
+        tools:ignore="ProtectedPermissions" />        
 
     <application
         android:name="cclua.App"
         android:label="@string/app_name"
-        android:allowBackup="false"
+        android:allowBackup="true"
         android:icon="@mipmap/icon"
         android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
         tools:replace="android:allowBackup"
@@ -47,9 +49,9 @@
 
         <activity
             android:name="cclua.SplashActivity"
-            android:exported="true"
             android:alwaysRetainTaskState="true"
             android:launchMode="standard"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
@@ -74,16 +76,6 @@
             </intent-filter>
         </activity>
 
-        <!-- <activity
-            android:name="com.codetypes.hellolua.AppActivity"
-            android:exported="true" 
-            android:launchMode="singleTop">
-           <intent-filter>
-               &lt;!&ndash; <action android:name="android.intent.action.MAIN" /> &ndash;&gt;
-
-               &lt;!&ndash; <category android:name="android.intent.category.LAUNCHER" /> &ndash;&gt;
-           </intent-filter>
-        </activity> -->
     </application>
 
 </manifest>
