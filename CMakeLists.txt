@@ -99,26 +99,43 @@ endif()
 # add cross-platforms source files and header files
 list(APPEND GAME_SOURCE
 		${RUNTIME_SRC_ROOT}/Classes/AppDelegate.cpp
-		${RUNTIME_SRC_ROOT}/Classes/GameNews.cpp
-		${RUNTIME_SRC_ROOT}/Classes/GameOverScene.cpp
+		${RUNTIME_SRC_ROOT}/Classes/Bubble.cpp
+		${RUNTIME_SRC_ROOT}/Classes/BubbleLayer.cpp
+		${RUNTIME_SRC_ROOT}/Classes/FailLayer.cpp
+		${RUNTIME_SRC_ROOT}/Classes/GameoverLayer.cpp
 		${RUNTIME_SRC_ROOT}/Classes/GameScene.cpp
+		${RUNTIME_SRC_ROOT}/Classes/GiftLayer.cpp
 		${RUNTIME_SRC_ROOT}/Classes/HelloWorldScene.cpp
-		${RUNTIME_SRC_ROOT}/Classes/LevelScene.cpp
-		${RUNTIME_SRC_ROOT}/Classes/SelectSence.cpp
-		${RUNTIME_SRC_ROOT}/Classes/ShopScene.cpp
-		${RUNTIME_SRC_ROOT}/Classes/Sound.cpp
+		${RUNTIME_SRC_ROOT}/Classes/PauseLayer.cpp
+		${RUNTIME_SRC_ROOT}/Classes/PropLayer.cpp
+		${RUNTIME_SRC_ROOT}/Classes/ReturnMenuLayer.cpp
+		${RUNTIME_SRC_ROOT}/Classes/ReviveLayer.cpp
+		${RUNTIME_SRC_ROOT}/Classes/ShopLayer.cpp
+		${RUNTIME_SRC_ROOT}/Classes/StartScene.cpp
+		${RUNTIME_SRC_ROOT}/Classes/TouchLayer.cpp
+		${RUNTIME_SRC_ROOT}/Classes/TurnplateLayer.cpp
+		${RUNTIME_SRC_ROOT}/Classes/UserData.cpp
      )
 list(APPEND GAME_HEADER
 		${RUNTIME_SRC_ROOT}/Classes/AppDelegate.h
-		${RUNTIME_SRC_ROOT}/Classes/Define.h
-		${RUNTIME_SRC_ROOT}/Classes/GameNews.h
-		${RUNTIME_SRC_ROOT}/Classes/GameOverScene.h
+		${RUNTIME_SRC_ROOT}/Classes/Bubble.h
+		${RUNTIME_SRC_ROOT}/Classes/BubbleLayer.h
+		${RUNTIME_SRC_ROOT}/Classes/FailLayer.h
+		${RUNTIME_SRC_ROOT}/Classes/GameConst.h
+		${RUNTIME_SRC_ROOT}/Classes/GameEnum.h
+		${RUNTIME_SRC_ROOT}/Classes/GameoverLayer.h
 		${RUNTIME_SRC_ROOT}/Classes/GameScene.h
+		${RUNTIME_SRC_ROOT}/Classes/GiftLayer.h
 		${RUNTIME_SRC_ROOT}/Classes/HelloWorldScene.h
-		${RUNTIME_SRC_ROOT}/Classes/LevelScene.h
-		${RUNTIME_SRC_ROOT}/Classes/SelectSence.h
-		${RUNTIME_SRC_ROOT}/Classes/ShopScene.h
-		${RUNTIME_SRC_ROOT}/Classes/Sound.h
+		${RUNTIME_SRC_ROOT}/Classes/PauseLayer.h
+		${RUNTIME_SRC_ROOT}/Classes/PropLayer.h
+		${RUNTIME_SRC_ROOT}/Classes/ReturnMenuLayer.h
+		${RUNTIME_SRC_ROOT}/Classes/ReviveLayer.h
+		${RUNTIME_SRC_ROOT}/Classes/ShopLayer.h
+		${RUNTIME_SRC_ROOT}/Classes/StartScene.h
+		${RUNTIME_SRC_ROOT}/Classes/TouchLayer.h
+		${RUNTIME_SRC_ROOT}/Classes/TurnplateLayer.h
+		${RUNTIME_SRC_ROOT}/Classes/UserData.h
      )
 
 if(ANDROID)

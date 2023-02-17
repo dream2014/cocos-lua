@@ -40,7 +40,8 @@ public:
     virtual void initGLContextAttrs();
     virtual bool applicationDidFinishLaunching();
     private:
-    bool MapGameApplicationDidFinishLaunching();
+    // bool MapGameApplicationDidFinishLaunching();
+    bool MinigameApplicationDidFinishLaunching();
 };
 
 #endif // _APP_DELEGATE_H_

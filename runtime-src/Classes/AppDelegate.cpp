@@ -33,10 +33,11 @@
 #include "cclua/filesystem.h"
 
 //-----------------------------------------
-#include "HelloWorldScene.h"
-#include "Define.h"
-#include "Sound.h"
-#include "editor-support/cocostudio/SimpleAudioEngine.h"
+// #include "HelloWorldScene.h"
+// #include "Define.h"
+// #include "Sound.h"
+// #include "editor-support/cocostudio/SimpleAudioEngine.h"
+#include "StartScene.h"
 using namespace CocosDenshion;
 //-----------------------------------------
 
@@ -228,56 +229,97 @@ bool AppDelegate::applicationDidFinishLaunching()
     runtime::luaOpen(_open_plugins);
     
     RuntimeContext::applicationDidFinishLaunching();
-    return MapGameApplicationDidFinishLaunching();
+    return MinigameApplicationDidFinishLaunching();
 }
 
-bool AppDelegate::MapGameApplicationDidFinishLaunching() {
-	FileUtils::getInstance()->addSearchPath("res/MapGame");
+bool AppDelegate::MinigameApplicationDidFinishLaunching() {
     // initialize director
     auto director = Director::getInstance();
-	auto glview = director->getOpenGLView();
-	// if (!glview) {
-	// 	glview = GLView::createWithRect("My Game", Rect(0, 0, 720, 1280),0.5f);
-    //     director->setOpenGLView(glview);
-    // }
+    auto glview = director->getOpenGLView();
+    if(!glview) {
+        glview = GLViewImpl::createWithRect("Puzzle_Bubble", Rect(0, 0, 540, 960));
+        director->setOpenGLView(glview);
+    }
 
-	glview->setDesignResolutionSize(720, 1280, ResolutionPolicy::EXACT_FIT);
+    director->getOpenGLView()->setDesignResolutionSize(540, 960, ResolutionPolicy::FIXED_WIDTH);
+
+	director->getOpenGLView()->setFrameZoomFactor(1);
     // turn on display FPS
-    director->setDisplayStats(false);
+    director->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 
-	if (!readBoolXML(FirstGame))
-	{
-		saveBoolXML(FirstGame, true);
-		for (int i = 1; i < 4;i++)
-		{
-			for (int j = 1; j < 19;j++)
-			{
-				char name[15] = { 0 };
-				sprintf(name, LevelLock, i, j);
-				saveBoolXML(name, true);
-				sprintf(name, LevelBei, i, j);
-				saveBoolXML(name, false);
-			}			
-		}
-		saveBoolXML("levelLock1_1", false);
-		saveBoolXML(SecondLevel, false);
-		saveBoolXML(ThirdLevel, false);
-		saveIntXML(JBeiNum, 0);
-		saveBoolXML(GM, false);
-	}
-	
-	saveBoolXML(MUSIC, true);
+	FileUtils::getInstance()->addSearchPath("res/Minigame");
 
-	Sound::getInstance()->init();
-	
+	SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Music/bgm.mp3");
+	SimpleAudioEngine::getInstance()->preloadEffect("Music/Ending.mp3");
+	SimpleAudioEngine::getInstance()->preloadEffect("Music/Fuhuo.mp3");
+	SimpleAudioEngine::getInstance()->preloadEffect("Music/Guoguan.mp3");
+	SimpleAudioEngine::getInstance()->preloadEffect("Music/Click.mp3");
+	SimpleAudioEngine::getInstance()->preloadEffect("Music/Clock.mp3");
+	SimpleAudioEngine::getInstance()->preloadEffect("Music/Remove.mp3");
+	SimpleAudioEngine::getInstance()->preloadEffect("Music/Hit.mp3");
+	SimpleAudioEngine::getInstance()->preloadEffect("Music/Bomb.mp3");
+	SimpleAudioEngine::getInstance()->preloadEffect("Music/start.mp3");
+	SimpleAudioEngine::getInstance()->preloadEffect("Music/end.mp3");
+
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
-
+    //auto scene = HelloWorld::createScene();
+	auto scene = StartLayer::scene();
     // run
     director->runWithScene(scene);
 
     return true;
 }
+
+// bool AppDelegate::MapGameApplicationDidFinishLaunching() {
+// 	FileUtils::getInstance()->addSearchPath("res/MapGame");
+//     // initialize director
+//     auto director = Director::getInstance();
+// 	auto glview = director->getOpenGLView();
+// 	// if (!glview) {
+// 	// 	glview = GLView::createWithRect("My Game", Rect(0, 0, 720, 1280),0.5f);
+//     //     director->setOpenGLView(glview);
+//     // }
+
+// 	glview->setDesignResolutionSize(720, 1280, ResolutionPolicy::EXACT_FIT);
+//     // turn on display FPS
+//     director->setDisplayStats(false);
+
+//     // set FPS. the default value is 1.0/60 if you don't call this
+//     director->setAnimationInterval(1.0 / 60);
+
+// 	if (!readBoolXML(FirstGame))
+// 	{
+// 		saveBoolXML(FirstGame, true);
+// 		for (int i = 1; i < 4;i++)
+// 		{
+// 			for (int j = 1; j < 19;j++)
+// 			{
+// 				char name[15] = { 0 };
+// 				sprintf(name, LevelLock, i, j);
+// 				saveBoolXML(name, true);
+// 				sprintf(name, LevelBei, i, j);
+// 				saveBoolXML(name, false);
+// 			}			
+// 		}
+// 		saveBoolXML("levelLock1_1", false);
+// 		saveBoolXML(SecondLevel, false);
+// 		saveBoolXML(ThirdLevel, false);
+// 		saveIntXML(JBeiNum, 0);
+// 		saveBoolXML(GM, false);
+// 	}
+	
+// 	saveBoolXML(MUSIC, true);
+
+// 	Sound::getInstance()->init();
+	
+//     // create a scene. it's an autorelease object
+//     auto scene = HelloWorld::createScene();
+
+//     // run
+//     director->runWithScene(scene);
+
+//     return true;
+// }
