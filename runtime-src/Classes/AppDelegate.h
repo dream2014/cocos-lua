@@ -40,7 +40,18 @@ public:
     virtual void initGLContextAttrs();
     virtual bool applicationDidFinishLaunching();
     private:
-    bool MapGameApplicationDidFinishLaunching();
+    bool MinigameApplicationDidFinishLaunching();
+    /**
+    @brief  The function be called when the application enter background
+    @param  the pointer of the application
+    */
+    virtual void applicationDidEnterBackground();
+
+    /**
+    @brief  The function be called when the application enter foreground
+    @param  the pointer of the application
+    */
+    virtual void applicationWillEnterForeground();
 };
 
 #endif // _APP_DELEGATE_H_

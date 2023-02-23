@@ -2,32 +2,18 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
-#include "ui/CocosGUI.h"
-#include "cocostudio/CocoStudio.h"
-USING_NS_CC;
-using namespace ui;
-using namespace cocostudio;
-
-#include "GameNews.h"
 
 class HelloWorld : public cocos2d::Layer
 {
 public:
+    // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
-    virtual bool init();  
-   
-	void StartTouchEventCallback(Ref *pSender, Widget::TouchEventType type);
-	void HelpTouchEventCallback(Ref *pSender, Widget::TouchEventType type);
-	void SoundTouchEventCallback(Ref *pSender, Widget::TouchEventType type);
-	void CloseTouchEventCallback(Ref *pSender, Widget::TouchEventType type);
-	void VipTouchEventCallback(Ref *pSender, Widget::TouchEventType type);
 
+    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
+    virtual bool init();
 
-	void OkTouchEventCallback(Ref *pSender, Widget::TouchEventType type);
-
+    // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
-private:
-	News* _news;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

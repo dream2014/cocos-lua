@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>get.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{657,256},{167,70}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{167,70}</string>
+			</dict>
+			<key>gift_1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{461,256},{209,56}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{209,56}</string>
+			</dict>
+			<key>gift_bg1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{460,500},{445,482}}</string>
+				<key>offset</key>
+				<string>{0,1}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{448,485}</string>
+			</dict>
+			<key>girl.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{461,5},{206,241}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{206,241}</string>
+			</dict>
+			<key>get_press.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{657,433},{134,56}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{167,70}</string>
+			</dict>
+			<key>gift_2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{527,256},{209,55}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{209,55}</string>
+			</dict>
+			<key>gift_3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{592,256},{209,55}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{209,55}</string>
+			</dict>
+			<key>gift_bg2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{5,5},{446,485}}</string>
+				<key>offset</key>
+				<string>{1,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{448,485}</string>
+			</dict>
+			<key>gift_bg3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{5,500},{445,484}}</string>
+				<key>offset</key>
+				<string>{1,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{448,485}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>Gift.png</string>
+			<key>realTextureFileName</key>
+			<string>Gift.png</string>
+			<key>size</key>
+			<string>{910,989}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>910</integer>
+			<key>height</key>
+			<integer>989</integer>
+		</dict>
+	</dict>
+</plist>
