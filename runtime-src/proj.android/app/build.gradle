@@ -4,10 +4,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
-    assetPacks = [":mylibrary"]  //打开三处实现aab分包1
+    // assetPacks = [":mylibrary"]  //打开三处实现aab分包1
 
     defaultConfig {
-        applicationId "com.yzzbs.battle"
+        applicationId "com.hege.tend"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 101
@@ -112,8 +112,8 @@ def compileAssets(path) {
 
 android.applicationVariants.all { variant ->
     def srcAssets = "${projectDir}/../../../assets"
-   def destAssets = "${projectDir}/../mylibrary/src/main/assets" //打开三处实现aab分包2
-    // def destAssets = "${projectDir}/assets"
+//    def destAssets = "${projectDir}/../mylibrary/src/main/assets" //打开三处实现aab分包2
+    def destAssets = "${projectDir}/assets"
 
     delete destAssets
 

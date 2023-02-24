@@ -13,4 +13,4 @@ load('libxgame', '../../frameworks/libxgame/android')
 // load('plugin-vivo', '../../frameworks/plugins/vivo/android')
 // load('plugin-wechat', '../../frameworks/plugins/wechat/android')
 load('app', 'app')
-include ':mylibrary' //打开三处实现aab分包3
+// include ':mylibrary' //打开三处实现aab分包3
